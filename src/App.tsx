@@ -122,7 +122,7 @@ function App() {
           <Router>
             <Routes>
               <Route 
-                path="/login" 
+                path="/" 
                 element={
                   !userInfo ? (
                     <Login onLogin={handleLogin} />
@@ -141,11 +141,10 @@ function App() {
                       onLogout={handleLogout}
                     />
                   ) : (
-                    <Navigate to="/login" replace />
+                    <Navigate to="/" replace />
                   )
                 } 
               />
-              <Route path="/" element={<Navigate to="/login" replace />} />
             </Routes>
           </Router>
         </PermissionsProvider>

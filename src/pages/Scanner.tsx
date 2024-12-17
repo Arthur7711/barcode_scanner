@@ -206,7 +206,7 @@ const Scanner = ({ token, userEmail, onLogout }: ScannerProps) => {
     if (onLogout) {
       onLogout();
     }
-    navigate("/login");
+    navigate("/");
   };
 
   return (
