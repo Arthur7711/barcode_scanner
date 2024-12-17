@@ -44,12 +44,6 @@ interface SubmissionData {
   comments: string;
 }
 
-interface CapturedImage {
-  url: string;
-  file: File;
-  barcode?: string;
-}
-
 const Scanner = ({ token, userEmail, onLogout }: ScannerProps) => {
   const navigate = useNavigate();
   const [submissionData, setSubmissionData] = useState<SubmissionData>({
@@ -66,12 +60,10 @@ const Scanner = ({ token, userEmail, onLogout }: ScannerProps) => {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [capturedImages, setCapturedImages] = useState<CapturedImage[]>([]);
 
   const { t } = useLanguage();
   const {
     camera,
-    location,
     geolocation,
     error: permissionError,
     requestPermissions,
@@ -141,13 +133,13 @@ const Scanner = ({ token, userEmail, onLogout }: ScannerProps) => {
         return;
       }
     }
-    console.log('StartScanning')
+    console.log("StartScanning");
     setIsScanning(true);
     setError("");
   };
 
   const handleBarcodeDetected = (code: string) => {
-    console.log('BarcodeDetected')
+    console.log("BarcodeDetected");
     setIsScanning(false);
     setSubmissionData((prev) => ({
       ...prev,

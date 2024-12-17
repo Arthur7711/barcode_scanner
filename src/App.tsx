@@ -4,7 +4,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { useState } from 'react';
 import Login from './pages/Login';
 import Scanner from './pages/Scanner';
-import { UMSLogo } from './components/UMSLogo';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { PermissionsProvider } from './contexts/PermissionsContext';
 import LanguageSelector from './components/LanguageSelector';
